@@ -1,10 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
+<!--    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <script src="/css/jquery-3.1.1.js"></script>
+    <script src="/css/bootstrap.min-3.3.7.js"></script>-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: green;
+            color: white;
+            text-align: center;
+        }
+    </style>
+   <!-- <link href="/images/login.png" rel="icon">
+    <link rel="stylesheet" href="/bootstrap/font-awesome.min.css"/>-->
+
 </head>
 <body>
-Hello Spring learners
+<div class="container" style="padding-top: 7%;">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-body">
+                    <center> <p th:inline="text">[[${result}]]</p></center>
+                    <form action="/login" method="POST" class="form-signin">
+                        <center><h3 class="form-signin-heading">Registration Form</h3></center><br>
+                        <div class="input-group input-sm p-l-0 p-r-0">
+                            <label class="input-group-addon" for="email"><i class="fa fa-user"></i></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+                        </div>
+                        <div class="input-group input-sm p-l-0 p-r-0">
+                            <label class="input-group-addon" for="password"><i class="fa fa-lock"></i></label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                        </div>
+                        <br>
+                        <fieldset>
+                            <button class="btn btn-lg btn-success btn-block" name="Submit" value="Login" type="Submit"><i class='fa fa-sign-in'></i> Register</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p align="center">Developed By, IICT-BUET.</p>
+    <p align="center">All Rights Reserved and Copyright © 2022 by IICT.</p>
+</div>
 </body>
 </html>
