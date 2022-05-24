@@ -22,6 +22,7 @@ public class HelloController {
             return "index.html";
         }
         model.addAttribute("result", null);
+        model.addAttribute("userList", userService.list());
         return "index.html";
     }
 
@@ -33,6 +34,7 @@ public class HelloController {
         }else {
             model.addAttribute("result", "Registration Failed");
         }
+        model.addAttribute("userList", userService.list());
         return "index.html";
     }
 }

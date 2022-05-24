@@ -45,6 +45,20 @@
                         </fieldset>
                     </form>
                 </div>
+                <div th:if="${not #lists.isEmpty(userList)}">
+                    <table class="display table table-bordered table-striped table-hover">
+                        <tr>
+                            <th>SL. No.</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr th:each="user, iterator : ${userList}">
+                            <td th:text="${iterator.index + 1}"></td>
+                            <td th:text="${user.email}"></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
