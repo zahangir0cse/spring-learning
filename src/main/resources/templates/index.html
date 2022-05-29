@@ -55,7 +55,7 @@
                         <tr th:each="user, iterator : ${userList}">
                             <td th:text="${iterator.index + 1}"></td>
                             <td th:text="${user.email}"></td>
-                            <td></td>
+                            <td><a class="btn-danger" type="button" th:href="@{'/delete/' + ${user.id}}">Delete</a></td>
                         </tr>
                     </table>
                 </div>

@@ -8,4 +8,6 @@ public interface UserService {
     User save(User user);
 
     List<User> list();
+
+    boolean deleteUser(Long id);
 }

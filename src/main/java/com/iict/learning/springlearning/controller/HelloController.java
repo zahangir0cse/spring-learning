@@ -26,6 +26,18 @@ public class HelloController {
         return "index.html";
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteUser(Model model, @PathVariable("id") Long id) {
+       boolean isDeleted = userService.deleteUser(id);
+       if(isDeleted){
+           model.addAttribute("result", "User deleted successfully");
+       }else {
+           model.addAttribute("result", "Failed! User not deleted.");
+       }
+        model.addAttribute("userList", userService.list());
+        return "index.html";
+    }
+
     @PostMapping("/login")
     public String postLogin(Model model, @ModelAttribute User user){
         user = userService.save(user);
