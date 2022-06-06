@@ -15,7 +15,7 @@ public class HelloController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping(value = {"/registration", "/"})
     public String login(Model model, @RequestParam(value = "error", required = false) String error) {
         if (error !=null){
             model.addAttribute("result", "Email or Password incorrect.\nPlease Try again");
@@ -38,7 +38,7 @@ public class HelloController {
         return "index.html";
     }
 
-    @PostMapping("/login")
+    /*@PostMapping("/login")
     public String postLogin(Model model, @ModelAttribute User user){
         user = userService.save(user);
         if(user != null){
@@ -48,5 +48,10 @@ public class HelloController {
         }
         model.addAttribute("userList", userService.list());
         return "index.html";
+    }*/
+
+    @GetMapping("/login")
+    public String postLogin(Model model, @ModelAttribute User user){
+        return "login.html";
     }
 }
